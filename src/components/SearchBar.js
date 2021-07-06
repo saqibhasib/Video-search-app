@@ -11,7 +11,8 @@ export default class SearchBar extends React.Component {
 
     onFormSubmit = event =>{
         event.preventDefault();
-        console.log(event);
+        
+        this.props.onFormParentSubmit (this.state.input);
     };
 
     render() {
