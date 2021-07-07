@@ -10,6 +10,10 @@ class App extends React.Component {
         videos: [],
         selectedVideo: null
     };
+
+    componentDidMount(){
+        this.onInputSubmit('living big in tiny house');
+    }
     
     onInputSubmit = async (input) => {
         const response = await ytapi.get('/search', {
@@ -19,7 +23,8 @@ class App extends React.Component {
         });
 
         this.setState ({
-            videos: response.data.items
+            videos: response.data.items,
+            selectedVideo: response.data.items[0]
         });
     };
 
@@ -31,10 +36,18 @@ class App extends React.Component {
         return (
             <div className="ui container">
                 <SearchBar onFormParentSubmit={this.onInputSubmit} />
-                <VideoDetail video={this.state.selectedVideo}/>
-                <VideoList 
-                    onVideoSelection={this.onVideoSelect} 
-                    videos={this.state.videos}/>
+                <div className="ui grid">
+                    <div className="ui row">
+                        <div className="eleven wide column">
+                            <VideoDetail video={this.state.selectedVideo}/>
+                        </div>
+                        <div className=" five wide column">
+                            <VideoList 
+                                onVideoSelection={this.onVideoSelect} 
+                                videos={this.state.videos}/>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     };
