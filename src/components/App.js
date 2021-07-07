@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import SearchBar from "./SearchBar";
 import ytapi from '../apis/youtube';
+import VideoList from "./VideoList";
 
 class App extends React.Component {
     state = {
@@ -24,7 +25,7 @@ class App extends React.Component {
         return (
             <div className="ui container">
                 <SearchBar onFormParentSubmit={this.onInputSubmit} />
-                I have {this.state.videos.length} videos.
+                <VideoList videos={this.state.videos}/>
             </div>
         );
     };
