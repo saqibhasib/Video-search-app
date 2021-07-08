@@ -1,9 +1,25 @@
-.video-item{
+.ui.segment.video-item{
     display: flex !important;
     align-items: center !important;
     cursor: pointer;
+    background-color: rgb(58, 58, 58);
 }
 
 .video-item.item img {
     max-width: 180px;
+}
+
+.ui.container.video-detail{
+    color: blanchedalmond;
+}
+div.vcontainer{
+    color:rgb(184, 184, 184);
+}
+
+.ui.header.vtext {
+    color: rgb(41, 41, 41);
+}
+
+.search-bar{
+    color: rgb(51, 94, 131);
 }

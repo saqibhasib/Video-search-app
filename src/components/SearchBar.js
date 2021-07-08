@@ -1,4 +1,5 @@
 import React from "react";
+import './SearchBar.css';
 
 export default class SearchBar extends React.Component {
     state={
@@ -12,14 +13,14 @@ export default class SearchBar extends React.Component {
     onFormSubmit = event =>{
         event.preventDefault();
         
-        this.props.onFormParentSubmit (this.state.input);
+        this.props.onFormParentSubmit (this.state.in);
     };
 
     render() {
         return (
-             <div className="search-bar ui segment">
+             <div className="search-bar ui inverted blue segment">
                  <form onSubmit={this.onFormSubmit} className="ui form">
-                    <div className="field">
+                    <div className="white">
                         <label>Video Search App</label>
                         <input 
                             type="text" 

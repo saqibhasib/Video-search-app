@@ -1,9 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import SearchBar from "./SearchBar";
 import ytapi from '../apis/youtube';
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import './App.css';
 
 class App extends React.Component {
     state = {
@@ -13,6 +13,7 @@ class App extends React.Component {
 
     componentDidMount(){
         this.onInputSubmit('living big in tiny house');
+        // document.body.style.backgroundColor = "red";
     }
     
     onInputSubmit = async (input) => {
@@ -34,17 +35,19 @@ class App extends React.Component {
 
     render(){
         return (
-            <div className="ui container">
-                <SearchBar onFormParentSubmit={this.onInputSubmit} />
-                <div className="ui grid">
-                    <div className="ui row">
-                        <div className="eleven wide column">
-                            <VideoDetail video={this.state.selectedVideo}/>
-                        </div>
-                        <div className=" five wide column">
-                            <VideoList 
-                                onVideoSelection={this.onVideoSelect} 
-                                videos={this.state.videos}/>
+            <div className="application">
+                <div className="ui container">
+                    <SearchBar onFormParentSubmit={this.onInputSubmit} />
+                    <div className="ui grid">
+                        <div className="ui row">
+                            <div className="eleven wide column">
+                                <VideoDetail video={this.state.selectedVideo}/>
+                            </div>
+                            <div className=" four wide column">
+                                <VideoList 
+                                    onVideoSelection={this.onVideoSelect} 
+                                    videos={this.state.videos}/>
+                            </div>
                         </div>
                     </div>
                 </div>

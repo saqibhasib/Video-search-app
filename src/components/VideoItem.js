@@ -4,17 +4,20 @@ import './VideoItem.css';
 const VideoItem = ({video, onVideoSelect}) =>{
     const title = video.snippet.title;
     return (
-        <div onClick={()=> onVideoSelect(video)} className="video-item item">
-            <img 
-                className="ui image rounded" 
-                src={video.snippet.thumbnails.default.url} 
-                alt={video.snippet.title}
-            />
-            <div className="content ">
-                <div className="header">
-                    {title}
+        <div>
+            <div onClick={()=> onVideoSelect(video)} className="ui segment video-item item">
+                <img 
+                    className="ui image rounded" 
+                    src={video.snippet.thumbnails.default.url} 
+                    alt={video.snippet.title}
+                />
+                <div className="ui content ">
+                    <h5 className="ui grey header">
+                        {title}
+                    </h5>
                 </div>
             </div>
+
         </div>
     );
 };
