@@ -13,20 +13,20 @@ export default class SearchBar extends React.Component {
     onFormSubmit = event =>{
         event.preventDefault();
         
-        this.props.onFormParentSubmit (this.state.in);
+        this.props.onFormParentSubmit (this.state.input);
     };
 
     render() {
         return (
              <div className="search-bar ui inverted blue segment">
                  <form onSubmit={this.onFormSubmit} className="ui form">
-                    <div className="white">
+                    <div className="field">
                         <label>Video Search App</label>
                         <input 
                             type="text" 
                             value={this.state.input}
                             onChange={this.onInputChange}
-                            />
+                        />
                     </div>
                  </form>
              </div>

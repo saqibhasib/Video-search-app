@@ -12,14 +12,14 @@ const VideoDetail = ({ video }) =>{
 
     return (
         <div className="ui segments video-detail">
-            <div className="ui segment embed">
+            <div className="ui embed">
                 <iframe src={videoSrc} title={video.snippet.title}/>
             </div>
-            <div className="ui inverted grey segment vcontainer">
-                <div className="ui header vtext">
+            <div className="ui inverted grey segment">
+                <div className="ui header">
                     {video.snippet.title}
                 </div>
-                <div className="ui vtext">{video.snippet.description}</div>
+                <div className="ui text">{video.snippet.description}</div>
             </div>
         </div>
     );

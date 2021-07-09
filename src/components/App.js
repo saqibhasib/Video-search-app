@@ -13,7 +13,6 @@ class App extends React.Component {
 
     componentDidMount(){
         this.onInputSubmit('living big in tiny house');
-        // document.body.style.backgroundColor = "red";
     }
     
     onInputSubmit = async (input) => {
